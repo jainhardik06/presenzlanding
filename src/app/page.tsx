@@ -80,42 +80,68 @@ function LocationPin({ color, top, left, size = 'default' }: { color: string; to
 
 function Footer() {
   return (
-    <footer
-      className="w-full py-12 px-4 sm:px-6 lg:px-8"
-      style={{
-        backgroundImage:
-          'linear-gradient(99.61710580599892deg, rgba(204, 235, 255, 0.25) 0.23963%, rgb(255, 255, 255) 100%)',
-      }}
-    >
-      <div className="max-w-7xl mx-auto">
-        {/* Top navigation */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 pb-8 border-b border-gray-300">
-          <nav className="flex flex-wrap gap-4">
-            <a href="#" className="text-sm font-medium text-gray-800 hover:opacity-70">Home</a>
-            <a href="#" className="text-sm font-medium text-gray-800 hover:opacity-70">Services</a>
-            <a href="#" className="text-sm font-medium text-gray-800 hover:opacity-70">Blog</a>
-            <a href="#" className="text-sm font-medium text-gray-800 hover:opacity-70">Help Center</a>
-            <a href="#" className="text-sm font-medium text-gray-800 hover:opacity-70">About</a>
+    <footer className="w-full bg-gradient-to-br from-blue-50/40 via-purple-50/30 to-pink-50/20">
+      {/* Top navigation bar */}
+      <div className="border-b border-gray-200/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center">
+            <img src="/logo.png" alt="Presenz logo" className="h-24 w-auto" />
+          </div>
+
+          {/* Navigation links */}
+          <nav className="hidden sm:flex gap-8">
+            <a href="#" className="text-base font-semibold" style={{ color: '#1e3a8a' }} >
+              Home
+            </a>
+            <a href="#" className="text-base font-semibold" style={{ color: '#1e3a8a' }} >
+              About
+            </a>
+            <a href="#" className="text-base font-semibold" style={{ color: '#1e3a8a' }} >
+              Download app
+            </a>
           </nav>
         </div>
+      </div>
 
-        {/* Bottom info */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 pt-8">
-          <p className="text-sm font-medium text-gray-600">Presenz @ 202X. All rights reserved.</p>
-          
-          {/* Social icons */}
-          <div className="flex gap-4">
-            <a href="#" className="w-6 h-6 text-gray-600 hover:text-gray-800">
-              <img src={img1} alt="Facebook" className="w-full h-full" />
+      {/* Bottom info */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
+          {/* Left side - Copyright and links */}
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+            <p className="text-sm font-semibold text-gray-700">© 2026 Presenz . All rights reserved.</p>
+            <div className="flex gap-6">
+              <a href="#" className="text-sm font-semibold text-gray-700 hover:text-blue-600 transition">
+                Terms of Service
+              </a>
+              <a href="#" className="text-sm font-semibold text-gray-700 hover:text-blue-600 transition">
+                Privacy Policy
+              </a>
+            </div>
+          </div>
+
+          {/* Right side - Social icons */}
+          <div className="flex gap-6">
+            <a href="#" className="w-6 h-6 text-blue-600 hover:text-blue-700 transition">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
             </a>
-            <a href="#" className="w-6 h-6 text-gray-600 hover:text-gray-800">
-              <img src={img2} alt="Twitter" className="w-full h-full" />
+            <a href="#" className="w-6 h-6 text-blue-600 hover:text-blue-700 transition">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.953 4.57a10 10 0 002.856-3.915 9.964 9.964 0 01-2.836.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
             </a>
-            <a href="#" className="w-6 h-6 text-gray-600 hover:text-gray-800">
-              <img src={img3} alt="Instagram" className="w-full h-full" />
+            <a href="#" className="w-6 h-6 text-blue-600 hover:text-blue-700 transition">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <rect width="24" height="24" fill="none"/>
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.001 12.001 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
             </a>
-            <a href="#" className="w-6 h-6 text-gray-600 hover:text-gray-800">
-              <img src={img6} alt="LinkedIn" className="w-full h-full" />
+            <a href="#" className="w-6 h-6 text-blue-600 hover:text-blue-700 transition">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.05-8.736 0-9.643h3.554v1.364c.429-.659 1.191-1.594 2.897-1.594 2.117 0 3.704 1.385 3.704 4.362v5.511zM5.337 9.432c-1.144 0-1.915-.758-1.915-1.707 0-.968.771-1.71 1.951-1.71 1.18 0 1.914.742 1.939 1.71 0 .949-.759 1.707-1.975 1.707zm1.946 11.02h-3.89V9.809h3.89v10.643zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
             </a>
           </div>
         </div>
@@ -550,31 +576,42 @@ export default function LandingPage() {
       <CategoryCarousel />
 
       {/* iPhone Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <section className="relative py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-purple-50/50 to-pink-50/30">
+        <div className="absolute inset-0 pointer-events-none z-20">
+          <img
+            src="/overlay4.png"
+            alt=""
+            className="w-full h-full object-cover opacity-70"
+            style={{ mixBlendMode: 'overlay' }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 md:gap-12 items-center">
             {/* iPhone mockup */}
             <div className="flex justify-center order-2 md:order-1">
-              <div className="relative w-full max-w-xs">
+              <div className="relative w-full max-w-xs lg:max-w-sm z-25">
                 <img
-                  src={img19}
-                  alt="iPhone mockup"
-                  className="w-full h-auto"
+                  src="/iphone.png"
+                  alt="iPhone mockup showing live map"
+                  className="w-full h-auto drop-shadow-2xl"
                 />
               </div>
             </div>
 
             {/* Content */}
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-slate-900 bg-clip-text text-transparent">
+            <div className="order-1 md:order-2 -mt-12 md:-mt-16 lg:-mt-20 z-25">
+              <h2 className="py-2 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold leading-tight bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] bg-clip-text text-transparent">
                 See what's happening.
-                <br />
+                
+              </h2>
+              <h2 className="py-2 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold mb-6 leading-tight bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] bg-clip-text text-transparent">
                 Where it's happening.
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-presenz-light mb-8">
+              <p className="text-base sm:text-lg md:text-xl mb-12 font-bold leading-relaxed bg-clip-text text-transparent max-w-xl" style={{ color: '#1e3a8a' }}>
                 Every pulse appears live on the map, exactly where the moment exists and disappears automatically after 48 hours.
               </p>
-              <button className="bg-presenz-blue hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition text-sm sm:text-base">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded-full transition text-sm sm:text-base shadow-lg hover:shadow-xl">
                 Open Live Pulse
               </button>
             </div>
@@ -584,9 +621,9 @@ export default function LandingPage() {
 
       {/* No profiles section */}
       <section 
-        className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative"
+        className="px-4 sm:px-6 lg:px-8 relative min-h-screen flex items-center justify-center"
         style={{
-          backgroundImage: `url('${imgRectangle43307}')`,
+          backgroundImage: `url('/bg.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -594,46 +631,81 @@ export default function LandingPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage:
-              'linear-gradient(106.24443581631037deg, rgba(255, 255, 255, 0) 1.9049%, rgba(212, 144, 255, 0.3) 62.346%, rgba(255, 238, 151, 0.4) 74.151%, rgba(255, 255, 255, 0.8) 84.54%, rgba(255, 255, 255, 0.8) 96.345%)',
+            background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5))',
           }}
         />
 
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-700 mb-4">
-            No profiles.
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold mb-8 sm:mb-14 md:mb-16" style={{ color: '#1e293b' }}>
+            No Profiles.
           </h2>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-700 mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold mb-8 sm:mb-14 md:mb-16" style={{ color: '#1e293b' }}>
             No Followers.
           </h2>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-700 mb-6">
-            No filters.
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold mb-12 sm:mb-14 md:mb-16" style={{ color: '#1e293b' }}>
+            No Filters.
           </h2>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-blue-600">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold" style={{ color: '#2563eb' }}>
             Just Presenz.
           </h2>
         </div>
       </section>
 
       {/* The Experience Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-yellow-50 via-pink-50 to-purple-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2 bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
+      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-yellow-50 via-pink-50 to-purple-50">
+        <div className="absolute inset-0 pointer-events-none z-20">
+          <img
+            src="/overlay5.png"
+            alt=""
+            className="w-full h-full object-cover opacity-70"
+            style={{ mixBlendMode: 'overlay' }}
+          />
+        </div>
+        <div className="max-w-7xl mx-auto z-30 relative">
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] bg-clip-text text-transparent">
               The Experience
             </h2>
-            <p className="text-lg sm:text-xl text-presenz-light">
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold" style={{ color: '#05006C' }}>
               From Discovery to Creation
             </p>
           </div>
 
-          {/* iPhone mockups with gradient background */}
-          <div className="relative">
-            <div className="flex justify-center">
+          {/* iPhone mockups */}
+          <div className="relative flex justify-center items-center gap-4 sm:gap-6 md:gap-8 z-30 relative  ">
+            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
               <img
-                src="https://www.figma.com/api/mcp/asset/af80ecbb-fcd8-401e-a94f-f2e23ba3ace9"
-                alt="The Experience - iPhone mockups"
-                className="w-full max-w-5xl h-auto rounded-lg"
+                src="/m1.png"
+                alt="iPhone mockup 1"
+                className="w-full h-auto drop-shadow-xl"
+              />
+            </div>
+            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
+              <img
+                src="/m2.png"
+                alt="iPhone mockup 2"
+                className="w-full h-auto drop-shadow-xl"
+              />
+            </div>
+            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
+              <img
+                src="/m3.png"
+                alt="iPhone mockup 3"
+                className="w-full h-auto drop-shadow-xl"
+              />
+            </div>
+            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
+              <img
+                src="/m4.png"
+                alt="iPhone mockup 4"
+                className="w-full h-auto drop-shadow-xl"
+              />
+            </div>
+            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
+              <img
+                src="/m5.png"
+                alt="iPhone mockup 5"
+                className="w-full h-auto drop-shadow-xl"
               />
             </div>
           </div>
