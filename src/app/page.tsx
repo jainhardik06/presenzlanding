@@ -164,7 +164,7 @@ function CategoryCarousel() {
   }
 
   return (
-    <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="pt-16 pb-12 sm:pt-12 sm:pb-16 md:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-yellow-50/60 via-purple-50/40 to-pink-50/50">
       <div className="absolute inset-0 pointer-events-none z-0">
           <img
             src="/overlay3.png"
@@ -175,8 +175,8 @@ function CategoryCarousel() {
         </div>
       
       <div className="max-w-7xl mx-auto relative z-30">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] text-transparent bg-clip-text mb-2 py-2">
+        <div className="text-center mb-8 sm:mb-12 mt-4 sm:mt-0">
+          <h2 className=" sm:py-2 text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] text-transparent bg-clip-text mb-2">
             Explore by category
           </h2>
           <p className="text-lg sm:text-xl text-presenz-light" style={{color: '#05006C'}}>
@@ -187,7 +187,7 @@ function CategoryCarousel() {
         <div className="relative w-full">
           {/* Cards Container */}
           <div 
-            className="card-scroll-container flex overflow-x-auto gap-8 pb-20 pt-16 px-8 -mx-8 snap-x snap-mandatory"
+            className="card-scroll-container flex overflow-x-auto gap-6 sm:gap-8 pb-16 sm:pb-20 pt-12 sm:pt-16 px-6 sm:px-6 md:px-8 -mx-0 sm:-mx-6 md:-mx-8 snap-x snap-mandatory"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -297,7 +297,7 @@ function CategoryCarousel() {
           </div>
 
           {/* Pagination Dots */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="hidden sm:flex justify-center gap-2 mt-4 sm:mt-6">
             {cards.map((_, idx) => (
               <button
                 key={idx}
@@ -418,7 +418,7 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section 
-        className="relative w-full pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24 lg:pt-36 lg:pb-28 min-h-[600px] sm:min-h-[700px] md:min-h-[800px] overflow-hidden z-15"
+        className="relative w-full pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24 lg:pt-36 lg:pb-28 min-h-[520px] sm:min-h-[620px] md:min-h-[720px] lg:min-h-[800px] overflow-hidden z-15"
         style={{
           backgroundImage: `url('/background.png')`,
           backgroundSize: 'cover, cover',
@@ -439,7 +439,7 @@ export default function LandingPage() {
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] xl:text-[3rem] font-bold leading-tight mb-3 sm:mb-4" style={{ color: '#05006C' }}>
               Different Vibes <span className="inline-block">.</span>Different Places
             </h1>
-            <p className="text-[2.5rem] font-extrabold mb-4 sm:mb-6" style={{ color: '#2563eb' }}>
+            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] font-extrabold mb-4 sm:mb-6" style={{ color: '#052DFF' }}>
               Just PRESENZ.
             </p>
             
@@ -449,7 +449,7 @@ export default function LandingPage() {
             </p>
 
             {/* CTA Button */}
-            <button className="bg-[#4f46e5] hover:bg-[#4338ca] text-white font-semibold py-3 sm:py-4 px-7 sm:px-9 rounded-full transition mb-6 sm:mb-12 mt-8 text-sm sm:text-base shadow-lg hover:shadow-xl">
+            <button className="bg-[#2B4DFF] hover:bg-[#2B4DFF] text-white font-semibold py-3 sm:py-4 px-7 sm:px-9 rounded-full transition mb-6 sm:mb-12 mt-8 text-sm sm:text-base shadow-lg hover:shadow-xl">
               Leave a Presenz
             </button>
 
@@ -473,9 +473,9 @@ export default function LandingPage() {
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-start mt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-start mt-12 sm:mt-16 lg:mt-24">
             {/* Left side text */}
-            <div className="lg:pr-4 mt-32">
+            <div className="lg:pr-4 mt-8 sm:mt-12 lg:mt-32">
               <h2 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold mb-6 sm:mb-8 leading-[1.1]">
                 <span className="block bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] bg-clip-text text-transparent">A new way to </span>
                 <span className="block bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] bg-clip-text text-transparent">experience culture.</span>
@@ -486,9 +486,9 @@ export default function LandingPage() {
             </div>
 
             {/* Right side - Event cards */}
-            <div className="relative w-full max-w-md lg:max-w-none">
+            <div className="relative w-full max-w-md lg:max-w-none mx-auto">
               {/* Art Card */}
-              <div className="relative z-10 bg-white rounded-2xl p-6 sm:p-7 border-t-[6px] border-purple-600 shadow-md hover:shadow-lg transition right-16 sm:right-16">
+              <div className="relative z-10 bg-white rounded-2xl p-6 sm:p-7 border-t-[6px] border-purple-600 shadow-md hover:shadow-lg transition right-0 sm:right-6 lg:right-16">
                 <div className="mb-3">
                   <span className="text-purple-600 font-bold text-xs tracking-widest uppercase">ART</span>
                 </div>
@@ -504,7 +504,7 @@ export default function LandingPage() {
               </div>
 
               {/* Music Card */}
-              <div className="relative z-20 -mt-6 bg-white rounded-2xl p-6 sm:p-7 border-t-[6px] border-blue-600 shadow-md hover:shadow-lg transition left-16 sm:left-16 bottom-20">
+              <div className="relative z-20 -mt-6 bg-white rounded-2xl p-6 sm:p-7 border-t-[6px] border-blue-600 shadow-md hover:shadow-lg transition left-0 sm:left-6 lg:left-16 bottom-0 sm:bottom-10 lg:bottom-20">
                 <div className="mb-3">
                   <span className="text-blue-600 font-bold text-xs tracking-widest uppercase">MUSIC</span>
                 </div>
@@ -518,7 +518,7 @@ export default function LandingPage() {
               </div>
 
               {/* Nightlife Card */}
-              <div className="relative z-30 -mt-6 bg-white rounded-2xl p-6 sm:p-7 border-t-[6px] border-pink-600 shadow-md hover:shadow-lg transition right-16 sm:right-16 bottom-40">
+              <div className="relative z-30 -mt-6 bg-white rounded-2xl p-6 sm:p-7 border-t-[6px] border-pink-600 shadow-md hover:shadow-lg transition right-0 sm:right-6 lg:right-16 bottom-0 sm:bottom-20 lg:bottom-40">
                 <div className="mb-3">
                   <span className="text-pink-600 font-bold text-xs tracking-widest uppercase">NIGHTLIFE</span>
                 </div>
@@ -550,10 +550,10 @@ export default function LandingPage() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 md:gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-6 md:gap-12 items-center">
             {/* iPhone mockup */}
             <div className="flex justify-center order-2 md:order-1">
-              <div className="relative w-full max-w-xs lg:max-w-sm z-25">
+              <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-sm z-25">
                 <img
                   src="/iphone.png"
                   alt="iPhone mockup showing live map"
@@ -563,18 +563,17 @@ export default function LandingPage() {
             </div>
 
             {/* Content */}
-            <div className="order-1 md:order-2 -mt-12 md:-mt-16 lg:-mt-20 z-25">
-              <h2 className="py-2 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold leading-tight bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] bg-clip-text text-transparent">
+            <div className="order-1 md:order-2 mt-2 md:-mt-16 lg:-mt-20 z-25">
+              <h2 className="py-2 text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] font-extrabold leading-tight bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] bg-clip-text text-transparent">
                 See what's happening.
-                
               </h2>
-              <h2 className="py-2 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold mb-6 leading-tight bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] bg-clip-text text-transparent">
+              <h2 className="py-2 text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] font-extrabold mb-4 sm:mb-6 leading-tight bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] bg-clip-text text-transparent">
                 Where it's happening.
               </h2>
-              <p className="text-base sm:text-lg md:text-xl mb-12 font-bold leading-relaxed bg-clip-text text-transparent max-w-xl" style={{ color: '#1e3a8a' }}>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 sm:mb-12 font-semibold leading-relaxed max-w-xl" style={{ color: '#1e3a8a' }}>
                 Every pulse appears live on the map, exactly where the moment exists and disappears automatically after 48 hours.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded-full transition text-sm sm:text-base shadow-lg hover:shadow-xl">
+              <button className="bg-[#2B4DFF] hover:bg-[#2B4DFF] text-white font-semibold py-3 sm:py-3.5 px-6 sm:px-8 rounded-full transition text-sm sm:text-base shadow-lg hover:shadow-xl">
                 Open Live Pulse
               </button>
             </div>
@@ -608,7 +607,7 @@ export default function LandingPage() {
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold mb-12 sm:mb-14 md:mb-16" style={{ color: '#1e293b' }}>
             No Filters.
           </h2>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold" style={{ color: '#2563eb' }}>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold" style={{ color: '#001DB5' }}>
             Just Presenz.
           </h2>
         </div>
@@ -635,36 +634,36 @@ export default function LandingPage() {
           </div>
 
           {/* iPhone mockups */}
-          <div className="relative flex justify-center items-center gap-4 sm:gap-6 md:gap-8 z-30 relative  ">
-            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
+          <div className="relative flex items-center justify-center gap-4 sm:gap-6 md:gap-8 z-30 overflow-x-auto md:overflow-visible pb-4 md:pb-0 px-1 md:px-0 snap-x snap-mandatory">
+            <div className="hidden md:flex flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] snap-start">
               <img
                 src="/m1.png"
                 alt="iPhone mockup 1"
                 className="w-full h-auto drop-shadow-xl"
               />
             </div>
-            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
+            <div className="hidden md:flex flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] snap-start">
               <img
                 src="/m2.png"
                 alt="iPhone mockup 2"
                 className="w-full h-auto drop-shadow-xl"
               />
             </div>
-            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
+            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] snap-start">
               <img
                 src="/m3.png"
                 alt="iPhone mockup 3"
                 className="w-full h-auto drop-shadow-xl"
               />
             </div>
-            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
+            <div className="hidden md:flex flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] snap-start">
               <img
                 src="/m4.png"
                 alt="iPhone mockup 4"
                 className="w-full h-auto drop-shadow-xl"
               />
             </div>
-            <div className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px]">
+            <div className="hidden md:flex flex-shrink-0 w-[160px] sm:w-[200px] md:w-[240px] snap-start">
               <img
                 src="/m5.png"
                 alt="iPhone mockup 5"
