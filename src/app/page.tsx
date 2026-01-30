@@ -124,6 +124,210 @@ function Footer() {
   )
 }
 
+function CategoryCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const cards = [
+    { 
+      img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTytNsZEENZHKOdmU91tbTAVOwN43Wh7UCb6c3UZ1OELCS0rYtY", 
+      color: '#040f5f', // Royal Blue
+      bgColor: '#0a1a77', // Deep Royal Blue
+      category: 'Music',
+      location: 'ABC Music Fest',
+      time: '0:10',
+    },
+    { 
+      img: imgRectangle43304, 
+      color: '#E91E63', // Pink
+      bgColor: '#9C1552', // Deep Pink
+      category: 'Night',
+      location: 'Party',
+      time: '0:10',
+    },
+    { 
+      img: imgRectangle43305, 
+      color: '#9AFF1D', // Lime Green
+      bgColor: '#6BB31A', // Deep Lime
+      category: 'Food',
+      location: 'Food Fest',
+      time: '0:10',
+    },
+    { 
+      img: imgRectangle43306, 
+      color: '#00D4FF', // Cyan
+      bgColor: '#0099C2', // Deep Cyan
+      category: 'Cinema',
+      location: 'Movie Theatre',
+      time: '0:10',
+    },
+  ]
+
+  const handleDotClick = (index: number) => {
+    setCurrentSlide(index)
+    const container = document.querySelector('.card-scroll-container')
+    if (container) {
+      const cardWidth = 300 + 32 // card width + gap
+      container.scrollTo({
+        left: cardWidth * index,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  return (
+    <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-0">
+          <img
+            src="/overlay3.png"
+            alt=""
+            className="w-full h-full object-cover opacity-80"
+            style={{ mixBlendMode: 'overlay' }}
+          />
+        </div>
+      
+      <div className="max-w-7xl mx-auto relative z-30">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#0A0A0A] to-[#0029FF] text-transparent bg-clip-text mb-2 py-2">
+            Explore by category
+          </h2>
+          <p className="text-lg sm:text-xl text-presenz-light" style={{color: '#05006C'}}>
+            Discover what's happening now across the city
+          </p>
+        </div>
+
+        <div className="relative w-full">
+          {/* Cards Container */}
+          <div 
+            className="card-scroll-container flex overflow-x-auto gap-8 pb-20 pt-16 px-8 -mx-8 snap-x snap-mandatory"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              overflow: 'visible',
+              overflowX: 'auto'
+            }}
+            onScroll={(e) => {
+              const container = e.currentTarget
+              const scrollLeft = container.scrollLeft
+              const cardWidth = 300 + 32 // card width + gap
+              const newSlide = Math.round(scrollLeft / cardWidth)
+              setCurrentSlide(newSlide)
+            }}
+          >
+            {cards.map((card, idx) => (
+              <div
+                key={idx}
+                className="flex-shrink-0 snap-start group"
+                style={{
+                  filter: `drop-shadow(0 0 20px ${card.color}55)`,
+                }}
+              >
+                {/* Outer white border container */}
+                <div 
+                  className="relative w-[330px] h-[460px] rounded-[1.75rem] p-[3px] transition-all duration-300"
+                  style={{
+                    background: 'white'
+                  }}
+                >
+                  {/* Inner card with gradient background */}
+                  <div
+                    className="relative w-full h-full rounded-[1.6rem] p-4 flex flex-col"
+                    style={{ 
+                      background: `linear-gradient(180deg, ${card.bgColor} 0%, ${card.bgColor}EE 100%)`,
+                      border: `2px solid ${card.color}`
+                    }}
+                  >
+                {/* Image Container - Taller rectangle with less roundness and white border */}
+                <div className="relative w-full h-[68%] rounded-[1.25rem] overflow-visible mb-8 bg-white p-[3px]">
+                  <div className="relative w-full h-full rounded-[1.1rem] overflow-hidden">
+                    <img
+                      src={card.img}
+                      alt={card.category}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  {/* Play Button - At bottom center edge of image */}
+                  <div className="absolute inset-x-0 bottom-0 translate-y-1/2 flex justify-center z-20">
+                    <button 
+                      className="relative w-[60px] h-[60px] rounded-full flex items-center justify-center backdrop-blur-md shadow-2xl group-hover:scale-110 transition-transform duration-300"
+                      style={{ 
+                        background: 'rgba(65, 105, 225, 0.35)',
+                        border: '2px solid rgba(255, 255, 255, 0.4)',
+                      }}
+                    >
+                      {/* Play Icon */}
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ border: '2px solid white' }}>
+                        <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5 ml-0.5">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Bottom Content Section */}
+                <div className="flex-1 flex flex-col justify-end px-3 pb-3">
+                  {/* Progress Bar */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex-1 h-[3px] bg-white/25 rounded-full relative">
+                      <div 
+                        className="absolute left-0 top-0 bottom-0 rounded-full bg-white"
+                        style={{ width: '60%' }} 
+                      />
+                      <div 
+                        className="absolute w-[14px] h-[14px] bg-white rounded-full shadow-md"
+                        style={{ left: '60%', top: '50%', transform: 'translate(-50%, -50%)' }}
+                      />
+                    </div>
+                    <span className="text-white text-sm font-semibold min-w-[32px] text-right">{card.time}</span>
+                  </div>
+
+                  {/* Category Badge */}
+                  <div className="mb-3">
+                    <button
+                      className="px-4 py-1.5 rounded-full text-[11px] font-bold text-white shadow-md uppercase transition hover:opacity-90"
+                      style={{ backgroundColor: card.color }}
+                    >
+                      {card.category}
+                    </button>
+                  </div>
+
+                  {/* Location */}
+                  <div className="flex items-center gap-2 text-white/95">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span className="text-[15px] font-semibold">{card.location}</span>
+                  </div>
+                </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Pagination Dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {cards.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleDotClick(idx)}
+                className={`rounded-full transition-all duration-300 ${
+                  currentSlide === idx 
+                    ? 'w-8 h-2.5 bg-slate-800' 
+                    : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -343,180 +547,7 @@ export default function LandingPage() {
       </section>
 
       {/* Category Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-blue-600 bg-clip-text text-transparent">
-              Explore by category
-            </h2>
-            <p className="text-lg sm:text-xl text-presenz-light">
-              Discover what's happening now across the city
-            </p>
-          </div>
-
-          <div className="relative w-full">
-            <div className="flex overflow-x-auto gap-10 pb-16 pt-8 px-4 -mx-4 scrollbar-hide snap-x snap-mandatory">
-              {[
-                { 
-                  img: imgRectangle43303, 
-                  color: '#2563eb', // Blue
-                  bgColor: '#020617', // Very Deep Blue
-                  category: 'Music',
-                  location: 'ABC Music Fest',
-                  time: '0:10',
-                  shadowColor: 'rgba(37,99,235,0.6)',
-                  buttonGlow: '#2563eb'
-                },
-                { 
-                  img: imgRectangle43304, 
-                  color: '#e11d48', // Pink
-                  bgColor: '#2a0a18', // Very Deep Pink
-                  category: 'Night',
-                  location: 'Party',
-                  time: '0:10',
-                  shadowColor: 'rgba(225,29,72,0.6)',
-                  buttonGlow: '#e11d48'
-                },
-                { 
-                  img: imgRectangle43305, 
-                  color: '#84cc16', // Lime
-                  bgColor: '#142800', // Very Deep Lime
-                  category: 'Food',
-                  location: 'Food Fest',
-                  time: '0:10',
-                  shadowColor: 'rgba(132,204,22,0.6)',
-                  buttonGlow: '#84cc16'
-                },
-                { 
-                  img: imgRectangle43306, 
-                  color: '#06b6d4', // Cyan
-                  bgColor: '#083344', // Very Deep Cyan
-                  category: 'Cinema',
-                  location: 'Movie Theatre',
-                  time: '0:10',
-                  shadowColor: 'rgba(6,182,212,0.6)',
-                  buttonGlow: '#06b6d4'
-                },
-                { 
-                  img: img10, // Placeholder
-                  color: '#8b5cf6', // Violet
-                  bgColor: '#1e1b4b', // Very Deep Violet
-                  category: 'Art',
-                  location: 'Gallery Open',
-                  time: '0:45',
-                  shadowColor: 'rgba(139,92,246,0.6)',
-                  buttonGlow: '#8b5cf6'
-                },
-                { 
-                  img: img11, // Placeholder
-                  color: '#f97316', // Orange
-                  bgColor: '#431407', // Very Deep Orange
-                  category: 'Tech',
-                  location: 'Innovation Hub',
-                  time: '0:20',
-                  shadowColor: 'rgba(249,115,22,0.6)',
-                  buttonGlow: '#f97316'
-                },
-              ].map((card, idx) => (
-                <div
-                  key={idx}
-                  className="flex-shrink-0 relative w-[320px] sm:w-[350px] h-[520px] rounded-[3rem] border-[3px] p-5 flex flex-col snap-center group transition-all duration-300 hover:scale-[1.02]"
-                  style={{ 
-                    borderColor: card.color,
-                    backgroundColor: card.bgColor,
-                    boxShadow: `0 0 30px ${card.shadowColor}`
-                  }}
-                >
-                  {/* Image Container */}
-                  <div className="relative w-full h-[62%] rounded-[2rem] overflow-hidden mb-8">
-                    <img
-                      src={card.img}
-                      alt={card.category}
-                      className="w-full h-full object-cover"
-                    />
-                    
-                    {/* Play Button - Centered on bottom edge of image */}
-                    <div className="absolute inset-x-0 bottom-0 translate-y-1/2 flex justify-center z-10">
-                       <button 
-                        className="relative w-[4.5rem] h-[4.5rem] rounded-full flex items-center justify-center backdrop-blur-md border border-white/50 shadow-lg group-hover:scale-110 transition-transform duration-300"
-                        style={{ 
-                          background: 'rgba(255, 255, 255, 0.15)',
-                          boxShadow: `0 0 20px ${card.buttonGlow}80` // Outer glow
-                        }}
-                       >
-                          {/* Inner glow circle */}
-                          <div 
-                            className="absolute inset-2 rounded-full opacity-40 blur-sm" 
-                            style={{ background: card.buttonGlow }} 
-                          />
-                          
-                          {/* Play Icon Circle */}
-                          <div className="relative w-12 h-12 rounded-full border-[1.5px] border-white flex items-center justify-center z-20">
-                            <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white ml-0.5">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </div>
-                       </button>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 flex flex-col justify-end px-2 pb-2">
-                    {/* Progress Bar */}
-                    <div className="flex items-center gap-3 mb-5 relative z-0">
-                      <div className="flex-1 h-1.5 bg-white/10 rounded-full relative">
-                        {/* Progress fill */}
-                        <div 
-                           className="absolute left-0 top-0 bottom-0 rounded-full"
-                           style={{ 
-                             width: '60%', 
-                             background: `linear-gradient(90deg, ${card.color} 0%, white 100%)` 
-                           }} 
-                        />
-                        {/* Thumb */}
-                        <div 
-                          className="absolute w-5 h-5 bg-white rounded-full shadow-md cursor-pointer hover:scale-110 transition-transform"
-                          style={{ left: '60%', top: '50%', transform: 'translate(-50%, -50%)' }}
-                        />
-                      </div>
-                      <span className="text-white text-xs font-semibold min-w-[30px] text-right">{card.time}</span>
-                    </div>
-
-                    {/* Badge */}
-                    <div className="mb-4">
-                       <button
-                         className="px-6 py-2 rounded-full text-[11px] font-bold text-white tracking-widest shadow-md uppercase hover:opacity-90 transition"
-                         style={{ backgroundColor: card.color }}
-                       >
-                         {card.category}
-                       </button>
-                    </div>
-
-                    {/* Location */}
-                    <div className="flex items-center gap-2 text-white pb-1">
-                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
-                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                         <circle cx="12" cy="10" r="3" />
-                       </svg>
-                       <span className="text-sm font-bold tracking-wide">{card.location}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Pagination dots */}
-            <div className="flex justify-center gap-2 mt-4">
-              {[0, 1, 2, 3].map((idx) => (
-                <button
-                  key={idx}
-                  className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${idx === 0 ? 'bg-slate-800' : 'bg-slate-300'}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CategoryCarousel />
 
       {/* iPhone Section */}
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-purple-50">

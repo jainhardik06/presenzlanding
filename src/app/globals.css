@@ -9,3 +9,14 @@ html {
 body {
   font-family: 'Inter', sans-serif;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.card-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.card-scroll-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
