@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 
 type IconProps = {
   className?: string
@@ -30,40 +29,6 @@ function MenuIcon({ className = 'size-6' }: IconProps) {
       <path d="M4 6h16" />
       <path d="M4 12h16" />
       <path d="M4 18h16" />
-    </svg>
-  )
-}
-
-function FacebookIcon() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-    </svg>
-  )
-}
-
-function TwitterIcon() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7a10.6 10.6 0 01-9-5.5" />
-    </svg>
-  )
-}
-
-function InstagramIcon() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-      <circle cx="17.5" cy="6.5" r="1.5" />
-    </svg>
-  )
-}
-
-function LinkedinIcon() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.732-2.004 1.438-.103.249-.129.597-.129.946v5.421h-3.554s.047-8.767 0-9.679h3.554v1.372c.429-.663 1.196-1.608 2.906-1.608 2.122 0 3.713 1.388 3.713 4.373v5.542zM5.337 9.432c-1.144 0-1.915-.758-1.915-1.706 0-.968.77-1.71 1.954-1.71 1.187 0 1.915.751 1.948 1.71 0 .948-.76 1.706-1.987 1.706zm1.581 11.02H3.819V9.773h3.099v10.679zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
     </svg>
   )
 }

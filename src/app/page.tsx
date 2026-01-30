@@ -3,25 +3,9 @@
 import { useState } from 'react'
 
 // Image constants from Figma
-const imgRectangle43301 = 'https://www.figma.com/api/mcp/asset/7691d037-e081-4b35-b5cf-8bb6836ea38d'
-const img10 = 'https://www.figma.com/api/mcp/asset/b81db476-45ae-4080-aa92-acd42ba6b2af'
-const img11 = 'https://www.figma.com/api/mcp/asset/e3541cd8-1856-4216-892b-71f5e4ac381b'
-const imgRectangle43303 = 'https://www.figma.com/api/mcp/asset/7e1da179-7276-4268-a214-f0752e66ba9b'
 const imgRectangle43304 = 'https://www.figma.com/api/mcp/asset/e9510b26-bd5a-43b2-8b15-37f115026447'
 const imgRectangle43305 = 'https://www.figma.com/api/mcp/asset/dae97cad-598a-4f18-a7a6-5a6912711cdc'
 const imgRectangle43306 = 'https://www.figma.com/api/mcp/asset/41910d75-5844-41d8-a7a4-8b54a42d6923'
-const img19 = 'https://www.figma.com/api/mcp/asset/4b7e79d6-baa5-4684-8551-1844ab5e70db'
-const img1 = 'https://www.figma.com/api/mcp/asset/a8ea93a9-f80e-4d11-acd7-10897a039e9e'
-const img2 = 'https://www.figma.com/api/mcp/asset/d9c9aaf5-7ce0-453f-aa8e-fde0d37c055b'
-const img3 = 'https://www.figma.com/api/mcp/asset/fce40891-4197-4037-95e4-458dd19b47d5'
-const img6 = 'https://www.figma.com/api/mcp/asset/a594673a-6f31-4a63-8ec6-55f95e90061c'
-const imgRectangle43307 = 'https://www.figma.com/api/mcp/asset/2c72babf-7bff-4d4a-a578-30cdaeb59ef1'
-const img22 = 'https://www.figma.com/api/mcp/asset/ff42e234-0436-41cf-b756-235c8c3aab1c'
-const img25 = 'https://www.figma.com/api/mcp/asset/15ad7862-18b7-4039-b977-7d31c137f6a9'
-const img30 = 'https://www.figma.com/api/mcp/asset/989264cb-07fa-4f3f-b803-0f9e280bd177'
-const img33 = 'https://www.figma.com/api/mcp/asset/af80ecbb-fcd8-401e-a94f-f2e23ba3ace9'
-// The Experience section with all 5 iPhones
-const imgExperiencePhones = 'https://www.figma.com/api/mcp/asset/af80ecbb-fcd8-401e-a94f-f2e23ba3ace9'
 
 type IconProps = {
   className?: string
@@ -54,29 +38,7 @@ function MenuIcon({ className = 'size-6' }: IconProps) {
   )
 }
 
-function LocationPin({ color, top, left, size = 'default' }: { color: string; top: string; left: string; size?: 'default' | 'small' | 'large' }) {
-  const sizeClasses = {
-    small: 'w-6 h-6',
-    default: 'w-8 h-8',
-    large: 'w-10 h-10'
-  }
-  
-  return (
-    <div 
-      className={`absolute ${sizeClasses[size]} animate-bounce`}
-      style={{ 
-        top, 
-        left,
-        animationDuration: `${2 + Math.random()}s`,
-        animationDelay: `${Math.random() * 2}s`
-      }}
-    >
-      <svg viewBox="0 0 24 24" fill={color} className="w-full h-full drop-shadow-lg">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-      </svg>
-    </div>
-  )
-}
+
 
 function Footer() {
   return (
